@@ -49,11 +49,11 @@ func TestGetAPIKey(t *testing.T) {
 			got, actualErr := GetAPIKey(tc.header)
 
 			if actualErr != nil && actualErr != tc.err {
-				t.Fatalf("Wrong error: %v", actualErr)
+				t.Fatalf("Wrong error: %v; should be %v", actualErr, tc.err)
 			}
 
 			if got != tc.apiKey {
-				t.Fatalf("Wrong API key result: %v", got)
+				t.Fatalf("Wrong API key result: %v; should be %v", got, tc.apiKey)
 			}
 		})
 	}
